@@ -8,9 +8,39 @@
 <body>
 	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 
-	<div id="app">
-		<h1>{{ title }}</h1>
-		<p>{{ description }}</p>
+	<div id="app-1">
+		{{ message }}
+	</div>
+
+	<div id="app-2">
+		<span v-bind:title="message">
+			Hover the mouse over text for a few time
+			and see the bound message
+		</span>
+	</div>
+
+	<div id="app-3">
+		<span v-if="seen">
+			Now you can see this message cuz seen is equil true
+		</span>
+	</div>
+
+	<div id="app-4">
+		<ol>
+			<li v-for='todo in timetable'>
+				{{ todo.task }}
+			</li>
+		</ol>
+	</div>
+
+	<div id="app-5">
+		<p>{{ message }}</p>
+		<button v-on:click='reverseMessage'>Reverse Message</button>
+	</div>
+
+	<div id="app-6">
+		<p>{{ message }}</p>
+		<input v-model="message">
 	</div>
 
 	<script src="js/main.js"></script>
